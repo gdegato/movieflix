@@ -13,7 +13,9 @@ type urlParams = {
 
 const MovieDetails = () => {
   const { movieId } = useParams<urlParams>()
+
   const [reviews, setReviews] = useState<Review[]>([])
+  
   useEffect(() => {
     const config: AxiosRequestConfig = {
       method: 'GET',
@@ -33,12 +35,12 @@ const MovieDetails = () => {
 
   return (
     <div className="container">
-      <h1>Tela detalhes do filme id: 1 </h1>
+      <h1>Tela detalhes do filme id: {movieId} </h1>
 
       {hasAnyRoles(['ROLE_MEMBER']) && (
         <ReviewForm movieId={movieId} onInsertReview={handleInsertReview} />
       )}
-      <ReviewListing reviews = {reviews} />
+      <ReviewListing reviews={reviews} />
     </div>
   )
 }
