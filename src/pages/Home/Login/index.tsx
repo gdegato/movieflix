@@ -22,6 +22,7 @@ const Login = () => {
 
   const { from } = location.state || { from: { pathname: '/movies' } }
   const { setAuthContextData } = useContext(AuthContext)
+
   const [hasError, setHasError] = useState(false)
 
   const {
@@ -41,11 +42,11 @@ const Login = () => {
           authenticated: true,
           tokenData: getTokenData(),
         })
-        history.replace(from)
+        history.push('/movies')
       })
       .catch((error) => {
         setHasError(true)
-        console.log('erro', error)
+        console.log('Erro: ', error)
       })
   }
 

@@ -14,14 +14,16 @@ const Movies = () => {
   }, [])
 
   return (
-    <div className="auth-container">
-      <div className="auth-banner-container">
-        <h1>Tela listagem de movies</h1>
-        <ul className="navbar-nav">
-          <li>Acessar /movies/1</li>
-          <li>Acessar /movies/2</li>
-        </ul>
-      </div>
+    <div className="container">
+      <h1>Tela listagem de movies</h1>
+      <ul className="navbar-nav">
+        <li>
+          <a href="#">Acessar/movies/1</a>
+        </li>
+        <li>
+          <a href="#">Acessar/movies/2</a>
+        </li>
+      </ul>
     </div>
   )
 }

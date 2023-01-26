@@ -1,16 +1,10 @@
-import Button from 'components/Button'
-import { Link } from 'react-router-dom'
+import './styles.css'
 
 const ReviewListing = () => {
   return (
-    <div className="auth-container">
-      <div className="auth-banner-container">
-        <h1>Teste</h1>
-
-        
-              
-              
-      </div>
+    <div className="container-information">
+      <h3>Nome do usuário</h3>
+      <p>Comentario do filme</p>
     </div>
   )
 }
