@@ -1,6 +1,12 @@
+import { Review } from 'types/review'
 import './styles.css'
 
-const ReviewListing = () => {
+type Props = {
+  reviews: Review[]
+}
+
+const ReviewListing = ({ reviews }: Props) => {
+  console.log(reviews)
   return (
     <div className="container-information">
       <h3>Nome do usuário</h3>

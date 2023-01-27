@@ -42,7 +42,8 @@ const Login = () => {
           authenticated: true,
           tokenData: getTokenData(),
         })
-        history.push('/movies')
+        history.replace(from)
+        /*  history.replace('/movies') */
       })
       .catch((error) => {
         setHasError(true)

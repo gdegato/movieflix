@@ -8,7 +8,6 @@ const Button = ({ text }: Props) => {
       <button className="btn btn-primary">
         <h6>{text}</h6>
       </button>
-
       <div className="btn-icon-container"></div>
     </div>
   )

@@ -4,7 +4,7 @@ import { User } from 'types/user';
 import { SpringPage } from 'types/vendors/spring';
 import { requestBackend } from 'util/requests';
 
-const User = () => {
+const Users = () => {
   const [page, setPage] = useState<SpringPage<User>>();
 
   useEffect(() => {
@@ -32,4 +32,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default Users;

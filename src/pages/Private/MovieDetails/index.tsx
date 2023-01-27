@@ -40,8 +40,7 @@ const MovieDetails = () => {
       {hasAnyRoles(['ROLE_MEMBER']) && (
         <ReviewForm movieId={movieId} onInsertReview={handleInsertReview} />
       )}
-      {/* <ReviewListing reviews={reviews} /> */}
-      <ReviewListing />
+      <ReviewListing reviews={reviews} />
     </div>
   )
 }
