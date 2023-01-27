@@ -6,11 +6,18 @@ type Props = {
 }
 
 const ReviewListing = ({ reviews }: Props) => {
-  console.log(reviews)
   return (
     <div className="container-information">
-      <h3>Nome do usuário</h3>
+      <h3>Mais perdida que cusco em tiroteio</h3>
       <p>Comentario do filme</p>
+      <ul>
+        {reviews.map((review) => (
+          <li>
+            <p>{review.user.name}</p>
+            <p>{review.text}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
