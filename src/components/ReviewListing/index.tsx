@@ -12,7 +12,7 @@ const ReviewListing = ({ reviews }: Props) => {
       <p>Comentario do filme</p>
       <ul>
         {reviews.map((review) => (
-          <li>
+          <li key={review.id}>
             <p>{review.user.name}</p>
             <p>{review.text}</p>
           </li>

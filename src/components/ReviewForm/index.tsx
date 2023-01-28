@@ -23,6 +23,7 @@ const ReviewForm = ({ movieId, onInsertReview }: Props) => {
 
   const onSubmit = (formData: FormData) => {
     formData.movieId = parseInt(movieId)
+
     const config: AxiosRequestConfig = {
       method: 'POST',
       url: '/reviews',
@@ -34,6 +35,7 @@ const ReviewForm = ({ movieId, onInsertReview }: Props) => {
       .then((response) => {
         setValue('text', '')
         onInsertReview(response.data)
+        console.log('Sucesso ao salvar!!!!', response)
       })
       .catch((error) => {
         console.log('Erro ao salvar', error)
