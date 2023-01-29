@@ -6,4 +6,5 @@ Alguns recursos usados no desenvolvimento deste projeto:<br />
 -Salvar dados de autenticação e requisições autorizadas no localStorage<br />
 -Redirecionamento ao acessar rota não autorizada(rotas protegidas)<br />
 -Restrição de conteúdo conforme perfil de usuário<br />
--Spring (Backend) e Postman(API)<br />
+-Uso de Spring (Backend) e Postman(API)<br />
+-Responsividade para mobile
