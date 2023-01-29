@@ -5,6 +5,7 @@ import { removeAuthData } from 'util/storage'
 import history from 'util/history'
 import { AuthContext } from 'AuthContext'
 
+
 import './styles.css'
 
 type AuthData = {

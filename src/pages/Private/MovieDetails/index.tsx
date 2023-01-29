@@ -6,8 +6,10 @@ import { useParams } from 'react-router-dom'
 import { Review } from 'types/review'
 import { hasAnyRoles } from 'util/auth'
 import { requestBackend } from 'util/requests'
+import MovieDetailsLoader from './MovieDetailsLoader'
 
-import "./styles.css"
+
+import './styles.css'
 
 type urlParams = {
   movieId: string
@@ -15,8 +17,10 @@ type urlParams = {
 
 const MovieDetails = () => {
   const { movieId } = useParams<urlParams>()
-
   const [reviews, setReviews] = useState<Review[]>([])
+  const [isLoading, setIsLoading] = useState(false)
+
+ 
 
   useEffect(() => {
     const config: AxiosRequestConfig = {
@@ -24,9 +28,15 @@ const MovieDetails = () => {
       url: `/movies/${movieId}/reviews`,
       withCredentials: true,
     }
-    requestBackend(config).then((response) => {
-      setReviews(response.data)
-    })
+    setIsLoading(true)
+    
+    requestBackend(config)
+      .then((response) => {
+        setReviews(response.data)
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
   }, [movieId])
 
   const handleInsertReview = (review: Review) => {
@@ -44,9 +54,10 @@ const MovieDetails = () => {
           <ReviewForm movieId={movieId} onInsertReview={handleInsertReview} />
         )}
       </div>
-      <div className="review-listing">
+      {isLoading ? <MovieDetailsLoader /> : (
+        <div className="review-listing">
         <ReviewListing reviews={reviews} />
-      </div>
+      </div>)}
     </div>
   )
 }

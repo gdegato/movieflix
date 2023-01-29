@@ -1,4 +1,3 @@
-
 .login-card {
     padding: 20px;
     font-size: 16px;
@@ -33,14 +32,18 @@
     text-decoration-line: underline;
     margin-left: 10px;
 }
+
 .login-submit {
-      margin-top: 50px;
-      
+    margin-top: 50px;
+
+}
+
+.login-card input {
+    height: 50px;
 }
 
 
-
- @media(min-width: 576px) {
+@media(min-width: 576px) {
     .login-card {
         padding: 40px;
     }
@@ -49,8 +52,9 @@
         width: 479px;
         height: 573px;
     }
+
     .login-submit button {
         width: 398px;
         height: 74px;
     }
-} 
+}
