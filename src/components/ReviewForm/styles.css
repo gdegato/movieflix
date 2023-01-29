@@ -18,3 +18,9 @@
 .input-review-form input {
     height: 50px;
 }
+
+@media(min-width: 1200px) {
+    .container-review-form {
+        padding: 20px;
+    }
+}
