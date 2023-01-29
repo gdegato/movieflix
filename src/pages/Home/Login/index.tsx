@@ -43,7 +43,6 @@ const Login = () => {
           tokenData: getTokenData(),
         })
         history.replace(from)
-        /*  history.replace('/movies') */
       })
       .catch((error) => {
         setHasError(true)

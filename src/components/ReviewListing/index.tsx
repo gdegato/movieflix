@@ -7,7 +7,7 @@ type Props = {
 
 const ReviewListing = ({ reviews }: Props) => {
   return (
-    <div className="container-information">
+    <div className="container-review-list">
       <h3>Mais perdida que cusco em tiroteio</h3>
       <p>Comentario do filme</p>
       <ul>

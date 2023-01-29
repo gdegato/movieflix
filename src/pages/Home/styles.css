@@ -1,0 +1,34 @@
+.container-home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #fff;
+}
+
+.banner-container-home {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    .banner-container-home {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+        width: 500px;
+        align-items: center;
+    }
+
+    .banner-container-home h1 {
+        font-size: 48px;
+        margin-top: 25px;
+        margin-bottom: 20px;
+
+    }
+
+    .banner-container-home p {
+        font-size: 22px;
+        margin-bottom: 40px;
+        width: 325px;
+    }
+
+}

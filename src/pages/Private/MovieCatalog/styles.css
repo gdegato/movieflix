@@ -1,3 +1,47 @@
-.container {
+.container-movie {
     color: #fff;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-movie h1 {
+    margin-bottom: 50px;
+    padding-left: 15px;
+}
+
+.container-movie-list li {
+    font-size: 18px;
+    padding: 0 0 12px 15px;
+
+}
+
+@media (min-width: 576px) {
+    .container-movie h1 {
+        padding-left: 24px;
+    }
+
+    .container-movie-list li {
+        padding-left: 25px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container-movie h1 {
+        padding-left: 33px;
+    }
+
+    .container-movie-list li {
+        padding-left: 35px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-movie h1 {
+        padding-left: 47px;
+    }
+
+    .container-movie-list li {
+        padding-left: 49px;
+    }
 }

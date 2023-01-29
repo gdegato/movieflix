@@ -7,6 +7,8 @@ import { Review } from 'types/review'
 import { hasAnyRoles } from 'util/auth'
 import { requestBackend } from 'util/requests'
 
+import "./styles.css"
+
 type urlParams = {
   movieId: string
 }
@@ -37,10 +39,14 @@ const MovieDetails = () => {
     <div className="container">
       <h1>Tela detalhes do filme id: {movieId} </h1>
 
-      {hasAnyRoles(['ROLE_MEMBER']) && (
-        <ReviewForm movieId={movieId} onInsertReview={handleInsertReview} />
-      )}
-      <ReviewListing reviews={reviews} />
+      <div className="review-form">
+        {hasAnyRoles(['ROLE_MEMBER']) && (
+          <ReviewForm movieId={movieId} onInsertReview={handleInsertReview} />
+        )}
+      </div>
+      <div className="review-listing">
+        <ReviewListing reviews={reviews} />
+      </div>
     </div>
   )
 }

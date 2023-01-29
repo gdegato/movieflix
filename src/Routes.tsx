@@ -3,8 +3,8 @@ import MovieCatalog from 'pages/Private/MovieCatalog'
 import MovieDetails from 'pages/Private/MovieDetails'
 import Navbar from 'components/Navbar'
 import { Route, Router, Switch } from 'react-router-dom'
-import Login from 'pages/Home/Login'
 import PrivateRoute from 'components/PrivateRoute'
+import Home from 'pages/Home'
 
 
 const Routes = () => (
@@ -12,7 +12,7 @@ const Routes = () => (
     <Navbar />
     <Switch>
       <Route path="/" exact>
-        <Login />
+        <Home />
       </Route>
       <PrivateRoute path="/movies">
         <Route path="/movies" exact>

@@ -1,9 +1,11 @@
-import { useContext, useEffect} from 'react'
+import { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getTokenData, isAuthenticated, TokenData } from 'util/auth'
 import { removeAuthData } from 'util/storage'
 import history from 'util/history'
 import { AuthContext } from 'AuthContext'
+
+import './styles.css'
 
 type AuthData = {
   authenticated: boolean
@@ -11,9 +13,7 @@ type AuthData = {
 }
 
 const Navbar = () => {
-
-  const { authContextData, setAuthContextData } = useContext(AuthContext);
- 
+  const { authContextData, setAuthContextData } = useContext(AuthContext)
 
   useEffect(() => {
     if (isAuthenticated()) {
@@ -45,13 +45,12 @@ const Navbar = () => {
 
         <div>
           {authContextData.authenticated ? (
-            <div className="collapse navbar-collapse">
-              <ul className="navbar-nav offset-md-2 main-menu">
+            <div>
+              <ul className="navbar-nav offset-md-2 main-menu-nav">
                 <li>
                   <Link to="/" onClick={handleLogoutClick}>
-                    SAIRFORA
+                    SAIR
                   </Link>
-                  {/*  <NavLink to="/">SAIR</NavLink> */}
                 </li>
               </ul>
             </div>
