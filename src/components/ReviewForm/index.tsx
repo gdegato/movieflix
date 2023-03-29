@@ -3,6 +3,7 @@ import Button from 'components/Button'
 import { useForm } from 'react-hook-form'
 import { Review } from 'types/review'
 import { requestBackend } from 'util/requests'
+import { toast } from 'react-toastify'
 
 import './styles.css'
 
@@ -38,9 +39,11 @@ const ReviewForm = ({ movieId, onInsertReview }: Props) => {
       .then((response) => {
         setValue('text', '')
         onInsertReview(response.data)
+        toast.info('Cadastrado com sucesso!')
       })
       .catch((error) => {
         console.log('Erro ao salvar', error)
+        toast.error('Não foi possível cadastrar.')
       })
   }
 
@@ -60,9 +63,8 @@ const ReviewForm = ({ movieId, onInsertReview }: Props) => {
           {errors.text?.message}
         </div>
         <div className="button-review-form">
-           <Button text={'Salvar avaliação'} />
+          <Button text={'Salvar avaliação'} />
         </div>
-       
       </form>
     </>
   )

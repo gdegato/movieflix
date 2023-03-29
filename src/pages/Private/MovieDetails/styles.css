@@ -1,11 +1,25 @@
-.container {
+.container-details {
     color: #fff;
     margin-top: 12px;
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+    padding: 0;
 }
 
-.container h1 {
+
+.container-details h1 {
     font-size: 24px;
 }
+
+.imagem-reduzida {
+    padding: 0 20px 15px 20px;
+
+}
+
+.card-bottom-container {
+    padding-left: 20px;
+    border: solid 1px red;
+    margin-bottom: 0;
+}
+
