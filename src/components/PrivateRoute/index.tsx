@@ -3,8 +3,7 @@ import { isAuthenticated } from 'util/auth'
 
 type Props = {
   children: React.ReactNode
-  path: string
-  
+  path: string  
 }
 
 const PrivateRoute = ({ children, path }: Props) => {

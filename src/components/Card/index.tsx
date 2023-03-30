@@ -6,7 +6,6 @@ type Props = {
   children?: React.ReactNode
   reduzirImagem?: boolean  
   cardRotaDetails?: boolean
-
 }
 
 const Card = ({ movie, children, reduzirImagem, cardRotaDetails }: Props) => {

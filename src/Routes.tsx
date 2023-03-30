@@ -6,7 +6,6 @@ import { Route, Router, Switch } from 'react-router-dom'
 import PrivateRoute from 'components/PrivateRoute'
 import Home from 'pages/Home'
 
-
 const Routes = () => (
   <Router history={history}>
     <Navbar />

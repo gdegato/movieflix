@@ -6,17 +6,9 @@
     border-radius: 4px;
     width: 300px;
     height: 322px;
-
 }
 
 .container-movie-review img {
     padding-top: 26px;
     width: 100%;
 }
-
-/* .container-review-list ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 10px;
-}  */

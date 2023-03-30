@@ -1,5 +1,4 @@
  .container-movie-synopsis {
-
         box-sizing: border-box;
         border: solid 1px #E1E1E1;
         border-radius: 5px;
@@ -11,5 +10,4 @@
         text-align: justify;
         letter-spacing: -0.015em;
         margin: 0px 20px 20px 20px;
-
  }

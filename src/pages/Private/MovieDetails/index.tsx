@@ -63,21 +63,25 @@ const MovieDetails = () => {
 
   return (
     <div className="container ">
-      <div className="container-details">
-        <div className="container-rota-details">
-          <img src={movie?.imgUrl} alt={movie?.title} />
-        </div>
+      {isLoading ? (
+        <MovieDetailsLoader />
+      ) : (
+        <div className="container-details">
+          <div className="container-rota-details">
+            <img src={movie?.imgUrl} alt={movie?.title} />
+          </div>
 
-        <div className="card-top-container">
-          <h3>{movie?.title}</h3>
-          <h4>{movie?.year}</h4>
-          <p>{movie?.subTitle}</p>
+          <div className="card-top-container">
+            <h3>{movie?.title}</h3>
+            <h4>{movie?.year}</h4>
+            <p>{movie?.subTitle}</p>
 
-          <div className="card-details-container">
-            <p>{movie?.synopsis}</p>
+            <div className="card-details-container">
+              <p>{movie?.synopsis}</p>
+            </div>
           </div>
         </div>
-      </div>
+      )}
       <div className="review-form">
         {hasAnyRoles(['ROLE_MEMBER']) && (
           <ReviewForm movieId={movieId} onInsertReview={handleInsertReview} />

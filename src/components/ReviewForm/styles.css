@@ -1,6 +1,5 @@
 .container-review-form {
-    display: flex;
- 
+    display: flex; 
     flex-direction: column;
     align-content: center;
     background-color: #6C6C6C;
@@ -24,7 +23,6 @@
 }
 
 @media(min-width:572px) {
-
     .input-review-form input {
         margin-left: 10px;
         margin-top: 10px;
@@ -36,6 +34,7 @@
     .container-review-form {
         width: 688px;
         height: 200px;
+        margin: 0;
     }
 
     .input-review-form input {
@@ -69,9 +68,7 @@
         width: 1120px;
     }
 
-
     .input-review-form input {
-
         width: 1040px;
     }
 }
