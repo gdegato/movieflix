@@ -8,7 +8,21 @@
 
 @media(min-width: 576px) {
     .botao {
-        width: 398px;
-        height: 65px;       
+        width: 496px;
+        height: 65px;
+        margin-bottom: 10px;
+    }
+}
+
+@media(min-width: 768px) {
+    .botao {
+        width: 608px;
+        height: 50px;
+    }
+}
+
+@media(min-width: 992px) {
+    .botao {
+        width: 400px;
     }
 }

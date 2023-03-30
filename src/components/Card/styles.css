@@ -9,7 +9,6 @@
     width: 280px;
 }
 
-
 .container-movie-card img {
     padding-top: 26px;
     width: 100%;
@@ -40,7 +39,7 @@
 
     .container-movie-card {
         height: 318px;
-        min-width: 258px;
+        width: 258px;
         margin-bottom: 10px;
     }
 }

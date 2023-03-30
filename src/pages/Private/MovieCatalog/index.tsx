@@ -62,10 +62,13 @@ const Movies = () => {
 
   return (
     <div className="container my-4">
-      <MovieFilter onSubmitFilter={handleSubmitFilter} />
-      <div className="row ">
+      <div className="submit-filter-catalog">
+         <MovieFilter onSubmitFilter={handleSubmitFilter} />
+      </div>
+     
+      <div className="row container-movie ">
         {page?.content.map((movie) => (
-          <div className="col-sm-6 col-xl-3 container-movie " key={movie.id}>
+          <div className="col-sm-6 col-xl-3  movie-card-catalog " key={movie.id}>
             <Link to={`/movies/${movie.id}`}>
               <Card movie={movie}></Card>
             </Link>
