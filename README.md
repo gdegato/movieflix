@@ -7,12 +7,13 @@ A aplicação MovieFlix tem um catálogo de filmes com informações diversas. O
 
 O objetivo deste estudo é aprender a realizar operações de autenticação e autorização, exibindo ou ocultando recursos de acordo com o perfil do usuário.
 
-## Tecnologias
+## ✔️ Tecnologias
 
 - React 3.0, Typescript, CSS, Javascript Bootstrap, HTML, Postman e Heroku
 
-Rotas, Axios, React Hooks, loaders, Context API, toaster, pagination, responsividade para mobile, tablet e desktop
-Consulta do backend no Heroku
+- Rotas, Axios, React Hooks, loaders, Context API, toaster, pagination, responsividade para mobile, tablet e desktop
+
+- Consulta do backend no Heroku
 
 ## Demonstração
 
@@ -22,7 +23,7 @@ Consulta do backend no Heroku
 https://youtu.be/GpH9c8ivZas
 
 
-## Instalação
+## 🛠️ Instalação
 
 - Instale em seu computador o NodeJS (preferência pela versão LTS) disponível no site https://nodejs.org/en.
 - Para visualizar o código do projeto, realize o clone do projeto para sua máquina local.
