@@ -1,0 +1,336 @@
+{
+  "info": {
+    "name": "MovieFlix API",
+    "_postman_id": "8c9c3b7a-3e24-4fcb-9f3f-222222222222",
+    "description": "Collection gerada a partir dos endpoints usados pela aplicação MovieFlix.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://movieflix-devsuperior.herokuapp.com"
+    },
+    {
+      "key": "clientId",
+      "value": "myclientid"
+    },
+    {
+      "key": "clientSecret",
+      "value": "myclientsecret"
+    },
+    {
+      "key": "username",
+      "value": ""
+    },
+    {
+      "key": "password",
+      "value": ""
+    },
+    {
+      "key": "access_token",
+      "value": ""
+    },
+    {
+      "key": "movieId",
+      "value": "1"
+    },
+    {
+      "key": "genreId",
+      "value": "1"
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth - Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic bXljbGllbnRpZDpteWNsaWVudHNlY3JldA=="
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "username",
+              "value": "{{username}}",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "{{password}}",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/oauth/token",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "oauth",
+            "token"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const json = pm.response.json();",
+              "if (json.access_token) {",
+              "  pm.collectionVariables.set('access_token', json.access_token);",
+              "}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Genres - List",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/genres",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "genres"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Movies - List",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/movies?page=0&size=4",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "movies"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "4"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Movies - List With Name Filter",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/movies?page=0&size=4&name=batman",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "movies"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "4"
+            },
+            {
+              "key": "name",
+              "value": "batman"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Movies - List With Genre Filter",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/movies?page=0&size=4&genreId={{genreId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "movies"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "4"
+            },
+            {
+              "key": "genreId",
+              "value": "{{genreId}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Movies - Details",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/movies/{{movieId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "movies",
+            "{{movieId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Movies - Reviews By Movie",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/movies/{{movieId}}/reviews",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "movies",
+            "{{movieId}}",
+            "reviews"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Reviews - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"movieId\": {{movieId}},\n  \"text\": \"Ótimo filme\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/reviews",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "reviews"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Users - List",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/users?page=0&size=12",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "12"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
