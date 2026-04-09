@@ -1,3 +1,5 @@
+import React from 'react'
+
 import ReviewForm from 'components/ReviewForm'
 import ReviewListing from 'components/ReviewListing'
 import { Movie } from 'types/movie'

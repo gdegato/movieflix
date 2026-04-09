@@ -5,7 +5,7 @@
     "description": "Collection gerada a partir dos endpoints usados pela aplicação MovieFlix.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
-  "variable": [
+  "variables": [
     {
       "key": "baseUrl",
       "value": "https://movieflix-devsuperior.herokuapp.com"

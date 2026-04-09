@@ -1,5 +1,5 @@
+import React from 'react'
 import './styles.css'
-
 import { useState, useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import Select from 'react-select'
@@ -51,7 +51,7 @@ const MovieFilter = ({ onSubmitFilter }: Props) => {
       <div className="base-movie movie-filter-container">
         <form onSubmit={handleSubmit(onSubmit)} className="movie-filter-form">
           <div className="movie-filter-category-container">
-            <Controller
+            {/* <Controller
               name="genre"
               control={control}
               render={({ field }) => (
@@ -75,7 +75,7 @@ const MovieFilter = ({ onSubmitFilter }: Props) => {
                   getOptionValue={(genre: Genre) => String(genre.id)}
                 />
               )}
-            />
+            /> */}
           </div>
         </form>
       </div>

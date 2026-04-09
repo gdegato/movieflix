@@ -1,4 +1,5 @@
 import './styles.css'
+import React from 'react'
 import Card from 'components/Card'
 import Pagination from 'components/Pagination'
 import { Link } from 'react-router-dom'
@@ -43,9 +44,9 @@ const movies: Movie[] = [
 const Movies = () => {
   return (
     <div className="container my-4">
-      <div className="submit-filter-catalog">
+      {/* <div className="submit-filter-catalog">
         <MovieFilter />
-      </div>
+      </div> */}
 
       <div className="row container-movie ">
         {movies.map((movie) => (

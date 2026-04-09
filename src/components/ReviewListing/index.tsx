@@ -1,3 +1,4 @@
+import React from 'react'
 import { Review } from 'types/review'
 import {ReactComponent as StarIcon} from './../../assets/images/star.svg'
 import './styles.css'

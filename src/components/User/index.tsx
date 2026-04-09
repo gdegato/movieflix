@@ -1,3 +1,4 @@
+import React from 'react'
 import { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
 import { User } from 'types/user';

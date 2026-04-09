@@ -1,3 +1,4 @@
+import React from 'react'
 import history from 'util/history'
 import MovieCatalog from 'pages/Private/MovieCatalog'
 import MovieDetails from 'pages/Private/MovieDetails'

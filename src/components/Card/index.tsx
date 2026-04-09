@@ -1,5 +1,6 @@
-import { Movie } from 'types/movie'
 import './styles.css'
+import React from 'react'
+import { Movie } from 'types/movie'
 
 type Props = {
   movie: Movie

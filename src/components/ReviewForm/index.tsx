@@ -1,6 +1,7 @@
+import './styles.css'
+import React from 'react'
 import Button from 'components/Button'
 
-import './styles.css'
 
 const ReviewForm = () => {
   return (

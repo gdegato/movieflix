@@ -1,30 +1,28 @@
-import axios, { AxiosRequestConfig } from 'axios'
-import history from './history'
-import qs from 'qs'
-import { getAuthData } from './storage'
+import axios, { AxiosRequestConfig } from 'axios';
+import qs from 'qs';
+import history from './history';
+import { getAuthData } from './storage';
 
-export const BASE_URL =
-  process.env.REACT_APP_BACKEND_URL ?? 'http://localhost:8080'
+export const BASE_URL = process.env.REACT_APP_BACKEND_URL ?? "https://movieflix-devsuperior.herokuapp.com"
 
-const CLIENT_ID = process.env.REACT_APP_CLIENT_ID ?? 'myclientid'
-
-const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET ?? 'myclientsecret'
+const CLIENT_ID = process.env.REACT_APP_CLIENT_ID ?? "myclientid";
+const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET ?? "myclientsecret"
 
 type LoginData = {
-  username: string
-  password: string
-}
+  username: string;
+  password: string;
+};
 
 export const requestBackendLogin = (loginData: LoginData) => {
   const headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
     Authorization: 'Basic ' + window.btoa(CLIENT_ID + ':' + CLIENT_SECRET),
-  }
+  };
 
   const data = qs.stringify({
     ...loginData,
     grant_type: 'password',
-  })
+  });
 
   return axios({
     method: 'POST',
@@ -32,27 +30,28 @@ export const requestBackendLogin = (loginData: LoginData) => {
     url: '/oauth/token',
     data,
     headers,
-  })
+  });
 }
 
 export const requestBackend = (config: AxiosRequestConfig) => {
-  const headers = config.withCredentials
-    ? {
-        ...config.headers,
-        Authorization: 'Bearer ' + getAuthData().access_token,
-      }
+
+  const headers = config.withCredentials ? {
+    ...config.headers,
+    Authorization: 'Bearer' + getAuthData().access_token,
+  }
     : config.headers
 
-  return axios({ ...config, baseURL: BASE_URL, headers })
+  return axios({ ...config, baseURL: BASE_URL, headers });
+
 }
 
 axios.interceptors.request.use(
   function (config) {
-    return config
+    return config;
   },
   function (error) {
-    return Promise.reject(error)
-  },
+    return Promise.reject(error);
+  }
 )
 
 axios.interceptors.response.use(
@@ -64,5 +63,5 @@ axios.interceptors.response.use(
       history.push('/')
     }
     return Promise.reject(error)
-  },
+  }
 )

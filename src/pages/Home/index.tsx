@@ -1,4 +1,5 @@
 import './styles.css'
+import React from 'react'
 import { ReactComponent as Desenho } from 'assets/images/Desenho.svg'
 import Login from './Login'
 
