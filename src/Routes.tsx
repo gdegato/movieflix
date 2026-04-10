@@ -5,6 +5,7 @@ import MovieDetails from 'pages/Private/MovieDetails'
 import Navbar from 'components/Navbar'
 import { Route, Router, Switch } from 'react-router-dom'
 import Home from 'pages/Home'
+import PrivateRoute from 'components/PrivateRoute'
 
 const Routes = () => (
   <Router history={history}>
@@ -13,12 +14,12 @@ const Routes = () => (
       <Route path="/" exact>
         <Home />
       </Route>
-      <Route path="/movies" exact>
+      <PrivateRoute path="/movies" exact>
         <MovieCatalog />
-      </Route>
-      <Route path="/movies/:movieId">
+      </PrivateRoute>
+      <PrivateRoute path="/movies/:movieId">
         <MovieDetails />
-      </Route>
+      </PrivateRoute>
     </Switch>
   </Router>
 )

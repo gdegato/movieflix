@@ -4,6 +4,7 @@ import Button from 'components/Button'
 
 
 const ReviewForm = () => {
+
   return (
     <>
       <form className="container-review-form">
@@ -11,7 +12,6 @@ const ReviewForm = () => {
           <input
             type="text"
             className="form-control"
-            name="text"
             placeholder="Deixe sua avaliação aqui"
           />
         </div>

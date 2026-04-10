@@ -37,6 +37,10 @@
     }
 }
 
+@media (min-width: 992px) {
+
+};
+
 @media (min-width: 1200px) {
     .container-movie h1 {
         padding-left: 47px;
@@ -44,10 +48,5 @@
 
     .container-movie-list li {
         padding-left: 49px;
-    }
-
-    .row {
-        flex-wrap: nowrap;
-        justify-content: space-around;
     }
 }

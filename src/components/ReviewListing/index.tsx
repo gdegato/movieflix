@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Review } from 'types/review'
 import {ReactComponent as StarIcon} from './../../assets/images/star.svg'
 import './styles.css'
@@ -8,6 +8,7 @@ type Props = {
 }
 
 const ReviewListing = ({ reviews }: Props) => {
+
   return (
     <div className="container-review-list"> 
       <ul className="review-list">
